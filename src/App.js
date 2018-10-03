@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+// // REACT ROUTER - Allows navigation of different webpages - npm react-router-dom
+// import { Link } from 'react-router-dom';
+
+
+//import minified CSS
+import './Assets/css/default.min.css';
+
 
 class App extends Component {
   render() {
