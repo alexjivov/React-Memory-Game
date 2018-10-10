@@ -26,6 +26,7 @@ gulp.task('compile_scss', function() {
     .pipe(rename({suffix: '.min'})) // changing file name to minify
     .pipe(changed(SCSS_DEST)) // only applies to changed files
     .pipe(gulp.dest(SCSS_DEST)); // sending to output destyination
+
     
 
 });
