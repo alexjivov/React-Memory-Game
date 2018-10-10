@@ -14,6 +14,8 @@ import { Layout, Header, Footer } from 'react-mdl';
 ////COMPONENTS////
 /////////////////
 
+import Cards from './Components/Cards/Card';
+
 
 class App extends Component {
   render() {
@@ -33,7 +35,7 @@ class App extends Component {
           </div>
           </Layout>
           
-
+        <Cards>hey</Cards>
           
          
           
