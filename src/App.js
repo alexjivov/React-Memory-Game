@@ -25,7 +25,8 @@ class App extends Component {
           <Layout fixedHeader>
             <Header
               className="header-color" title={<h1 style={{ textDecoration: 'none', color: 'white', }} to="/"><i class="fas fa-brain" style={{ marginRight: '10px' }}></i>Click Game</h1>} scroll>
-              <h4>Click an Image to Begin!</h4>
+              <h4 style={{marginRight:'30%'}}>Click an Image to Begin!</h4>
+
               <h4> Score:    | Top Score:    </h4>
             </Header>
 
