@@ -36,32 +36,29 @@ background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, F
 .jumbotron  {
     text-align: center;
     color: white; 
+    height: 40%;
     background: #373B44;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
 }
 
+// .layout {
+//     height: 80%; 
+// }
+
 ////////////////////////////////////////////////////////////////////////////////
-///////////////////////////// Jumbotron and Body //////////////////////////////////
+///////////////////////////// Grid and Cards //////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-.cards-grid {
-    
 
-    p {
-        margin: 80px; 
-        background-color: white; 
-        height: 70%;
-        width: 80%;
-    }
-   
-}
 
 .mdl-grid {
     position: absolute;
-    left: 8%;
-    top: 80%;
+    left: 10%;
+    top: 95%;
     height: 150%;
     width: 80%;
+
+  
 }

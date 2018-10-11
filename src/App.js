@@ -14,7 +14,7 @@ import { Layout, Header, Footer } from 'react-mdl';
 ////COMPONENTS////
 /////////////////
 
-import Cards from './Components/Cards/Card';
+import Cards from './Assets/Components/Cards/Card';
 
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <div style={{ height: '300px', position: 'relative' }}>
-          <Layout fixedHeader>
+          <Layout className="layout" fixedHeader>
             <Header
               className="header-color" title={<h1 style={{ textDecoration: 'none', color: 'white', }} to="/"><i class="fas fa-brain" style={{ marginRight: '10px' }}></i>Click Game</h1>} scroll>
               <h4 style={{marginRight:'30%'}}>Click an Image to Begin!</h4>
@@ -36,7 +36,7 @@ class App extends Component {
           </div>
           </Layout>
           
-        <Cards>hey</Cards>
+        <Cards />
           
          
           
