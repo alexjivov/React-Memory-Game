@@ -15,17 +15,87 @@ function InitialCards() {
     ];
 }
 
+export default class Game extends Component {
+   constructor(props) {
+       super(props);
+       this.renderCards = this.renderCards.bind(this);
+       this.checkMatch = this.checkMatch.bind(this);
+       this.reset = this.reset.bind(this);
 
+       this.state = {
+           cards: InitialCards(),
+           lastCard: null,
+           locked: false,
+           matches: 0
+       };
+   }
+   
+   checkMatch(value,id) {
+       if(this.state.locked) {
+           return;
+       }
 
-class Game extends Component {
-    render() {
-        return (    
+       var cards = this.state.cards;
+       cards[id].flipped = true;
+       this.setState({cards,locked: true});
+       if (this.state.lastCard) {
+        if (value === this.state.lastCard.value) {
+       var matches = this.state.matches;
+       cards[id].matched = true;
+       cards[this.state.lastCard.id].matched = true;
+       this.setState({cards,lastCard: null, locked: false, matches: matches + 1});
+   } else {
+       setTimeout (() => {
+           cards[id].flipped = false;
+           cards[this.state.lastCard.id].flipped = false; 
+           this.setState({cards,lastCard:null, locked:false});
+       },1000);
+   }
+} else {
+    this.setState({
+        lastCard: {id,value},
+        locked: false
+    });
 
-
-
-
-    )
-    }
+}
 }
 
-export default Game; 
+renderCards(Cards) {
+    return Cards.map((Card, index) => {
+        return (
+            <Cards
+            key={index}
+            value={Card.value}
+            id={index}
+            matched={Card.matched}
+            flipped={Card.flipped}
+            checkMatch={this.checkMatch} />
+
+        );
+    });
+}
+
+reset() {
+    this.setState({
+        cards: InitialCards(),
+        lastCard: null,
+        locked: false,
+        matches: 0
+    });
+}
+
+render() {
+    var btnText = 'Reset';
+    if (this.state.matches === this.state.cards.length /2) {
+        btnText = 'You Win! Play Again?';
+    }
+    return(
+        <div className="Game">
+        <div>
+            <button onClick={this.reset}>{btnText}</button>
+        </div>
+        {this.renderCards(this.state.cards)}
+        </div>
+    );
+}
+}
