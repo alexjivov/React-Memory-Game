@@ -14,7 +14,8 @@ import { Layout, Header, Footer } from 'react-mdl';
 ////COMPONENTS////
 /////////////////
 
-import Cards from './Assets/Components/Cards/Card';
+// import Cards from './Assets/Components/Cards/Card';
+import Game from './Assets/Components/Game/Game';
 
 
 class App extends Component {
@@ -24,19 +25,19 @@ class App extends Component {
         <div style={{ height: '300px', position: 'relative' }}>
           <Layout className="layout" fixedHeader>
             <Header
-              className="header-color" title={<h1 style={{ textDecoration: 'none', color: 'white', }} to="/"><i class="fas fa-brain" style={{ marginRight: '10px' }}></i>Click Game</h1>} scroll>
+              className="header-color" title={<h1 style={{ textDecoration: 'none', color: 'white', }} to="/"><i className="fas fa-brain" style={{ marginRight: '10px' }}></i>Click Game</h1>} scroll>
               <h4 style={{marginRight:'30%'}}>Click an Image to Begin!</h4>
 
               <h4> Score:    | Top Score:    </h4>
             </Header>
 
             <div className="jumbotron">
-            <h1 class="display-4">Test Your Memory!</h1>
-            <p class="lead">Click on an image to earn points, but don't click on any more than once!</p>          
+            <h1 className="display-4">Test Your Memory!</h1>
+            <p className="lead">Click on an image to earn points, but don't click on any more than once!</p>          
           </div>
           </Layout>
           
-        <Cards />
+        <Game />
           
          
           

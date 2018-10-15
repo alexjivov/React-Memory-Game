@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Cards from './Cards/Cards';
+import Cards from '../Cards/Card';
 
 function InitialCards() {
     return [
@@ -15,12 +15,12 @@ function InitialCards() {
     ];
 }
 
-export default class Game extends Component {
+class Game extends Component {
    constructor(props) {
        super(props);
-       this.renderCards = this.renderCards.bind(this);
-       this.checkMatch = this.checkMatch.bind(this);
-       this.reset = this.reset.bind(this);
+    //    this.renderCard = this.renderCard.bind(this);
+    //    this.checkMatch = this.checkMatch.bind(this);
+    //    this.reset = this.reset.bind(this);
 
        this.state = {
            cards: InitialCards(),
@@ -60,15 +60,15 @@ export default class Game extends Component {
 }
 }
 
-renderCards(Cards) {
-    return Cards.map((Card, index) => {
+renderCard(cards) {
+    return cards.map((card, index) => {
         return (
             <Cards
             key={index}
-            value={Card.value}
+            value={card.value}
             id={index}
-            matched={Card.matched}
-            flipped={Card.flipped}
+            matched={card.matched}
+            flipped={card.flipped}
             checkMatch={this.checkMatch} />
 
         );
@@ -94,8 +94,10 @@ render() {
         <div>
             <button onClick={this.reset}>{btnText}</button>
         </div>
-        {this.renderCards(this.state.cards)}
+        {this.renderCard(this.state.cards)}
         </div>
     );
 }
 }
+
+export default Game;
