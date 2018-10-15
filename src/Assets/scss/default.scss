@@ -51,15 +51,47 @@ background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, F
 ///////////////////////////// Grid and Cards //////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
-.mdl-grid {
-    position: absolute;
-    left: 10%;
-    top: 95%;
-    height: 150%;
-    width: 80%;
-    overflow: hidden; 
+.Game {
+    position: relative;
+    top: 85%;
+    left: 22%;
+    width: 65%;
+    height: 160%;
+    background-color:transparent; 
 
   
+}
+.reset-button {
+    position: relative;
+    top: 99%;
+    left: 39.5%;
+    font-size: 20px;
+    
+    button {
+        background-color: orange;
+        padding: 5px; 
+        border-radius: 5%;
+        color: white;
+    }
+}
+
+.Card {
+    float: left; 
+    width: 12rem;
+    height: 12rem;
+    padding: 1rem;
+    margin: 2rem;
+    border: 1px solid black;
+    text-align: center;
+    background-color: black; 
+
+    &--flipped {
+        background-color: gray;
+    }
+
+    &--matched {
+        background-color: green; 
+    }
+
+
 }

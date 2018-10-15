@@ -91,7 +91,7 @@ render() {
     }
     return(
         <div className="Game">
-        <div>
+        <div className="reset-button">
             <button onClick={this.reset}>{btnText}</button>
         </div>
         {this.renderCard(this.state.cards)}
