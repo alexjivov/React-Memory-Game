@@ -1,30 +1,18 @@
-import React, { Component } from 'react';
-import classnames from 'classnames';
+import React from 'react';
 
-export default class Cards extends Component {
-   constructor(props) {
-       super(props);
-       this.handleClick = this.handleClick.bind(this);
-   }
 
-   handleClick(e) {
-       if(!this.props.flipped) {
-           this.props.checkMatch(this.props.value, this.props.id);
-       }
-   }
-   
-   render() {
-       var classes = classnames(
-           'Card',
-           {'Card--flipped': this.props.flipped},
-           {'Card--matched': this.props.matched}
-       );
-
-       var cardValue = this.props.flipped ? this.props.value: '';
-       return (
-           <div className ={classes} onClick={this.handleClick}>
-           {cardValue}
+// set properties for the image and the onClick event to see if the card has been clicked or not already
+const Cards = props => (
+    <div className="card">
+      <div className="img-container">
+        <img 
+          alt={"This is image " + props.id} 
+          src={props.image}
+          onClick={() => props.checkIfClicked(props.id)}
+        />
+      </div>
     </div>
-       )
-   }
-}
+  );
+  
+  export default Cards;
+  
