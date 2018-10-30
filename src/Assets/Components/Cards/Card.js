@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 // set properties for the image and the onClick event to see if the card has been clicked or not already
 const Cards = props => (
     <div className="card">
