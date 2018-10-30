@@ -15,7 +15,7 @@ import { Layout, Header, Footer } from 'react-mdl';
 /////////////////
 
 // import Cards + Game from './Assets/Components/Cards/Card';
-import Card from './Assets/Components/Cards/Card';
+import Cards from './Assets/Components/Cards/Card';
 import cards from './cards.json';
 import Wrapper from './Assets/Components/Wrapper/Wrapper';
 
@@ -24,12 +24,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: Card,
+      cards: cards,
       topScore: 0,
       currentScore: 0,
     };
     this.checkIfClicked = this.checkIfClicked.bind(this);
   }
+
+  
   
   // check if a card has been clicked
   checkIfClicked(id) {
@@ -37,16 +39,18 @@ class App extends Component {
     let clickedCard = this.state.cards.filter(card => card.id === id)[0];
     let cardsCopy = this.state.cards.slice().sort(function(a, b){return 0.5 - Math.random()});
     // if a card has not been clicked, set its clicked state to true
+
     if (!clickedCard.clicked) {
       clickedCard.clicked = true;
       cardsCopy[cardsCopy.findIndex((card) => card.id === id)] = clickedCard;
-      
       // set the state and increment the counter
       this.setState({
         cards: cardsCopy,
         currentScore: this.state.currentScore + 1,
         topScore: (this.state.currentScore + 1 > this.state.topScore ? this.state.currentScore + 1 : this.state.topScore),
       });
+      console.log(this.checkIfClicked)
+   
     }
     
     // if a card has been clicked already, then set its click to false and reset the game
@@ -86,7 +90,7 @@ class App extends Component {
           
           <Wrapper>  
           {this.state.cards.map(card => (
-            <Card
+            <Cards
               checkIfClicked={this.checkIfClicked}
               id={card.id}
               key={card.id}
